@@ -177,4 +177,16 @@ button:hover {
     padding: 8px;
     /* Reduz o padding dos campos para otimizar o uso do espaço */
   }
+
+    .radio-group label {
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente o botão de rádio com o texto */
+    font-size: 1em;
+    color: #333;
+    gap: 2px;
+    /* Espaçamento entre o botão de rádio e o texto */
+    cursor: pointer;
+    flex: 1;
+  }
 }
