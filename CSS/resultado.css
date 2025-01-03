@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   font-family: Arial, sans-serif;
   background-color: #F9F6F6;
   color: #333;
@@ -33,7 +34,7 @@ header h1 {
 
 .result-section {
   padding: 20px;
-  margin: 15px 0;
+  margin: 10px 0;
   border-radius: 8px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 }
@@ -156,4 +157,35 @@ footer {
 
 #closePopup:hover {
   background-color: #165265;
+}
+
+@media (max-width: 768px) {
+
+  body,
+  html {
+    font-family: Arial, sans-serif;
+    background-color: #F9F6F6;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0px;
+  }
+
+  .result-page {
+    max-width: 800px;
+    width: 100%;
+    background-color: #FFF;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  header h1 {
+    color: #3E606F;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
 }

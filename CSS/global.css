@@ -13,7 +13,8 @@ body {
 
 /* Header Transparente */
 header {
-  position: fixed; /* Fixa o header no topo da página */
+  position: fixed;
+  /* Fixa o header no topo da página */
   top: 0;
   left: 0;
   width: 100%;
@@ -22,14 +23,18 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.3); /* Transparência inicial */
-  transition: background-color 0.3s ease; /* Transição para o efeito de rolagem */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Transparência inicial */
+  transition: background-color 0.3s ease;
+  /* Transição para o efeito de rolagem */
   color: #fff;
 }
 
 header .logo img {
-  height: 40px; /* Ajuste o tamanho conforme necessário */
-  width: auto; /* Mantém a proporção da imagem */
+  height: 40px;
+  /* Ajuste o tamanho conforme necessário */
+  width: auto;
+  /* Mantém a proporção da imagem */
   display: inline-block;
   vertical-align: middle;
   border-radius: 20px;
@@ -37,7 +42,8 @@ header .logo img {
 
 /* Cor sólida ao rolar */
 header.scrolled {
-  background-color: rgba(0, 0, 0, 0.8); /* Cor sólida para melhor visibilidade ao rolar */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Cor sólida para melhor visibilidade ao rolar */
 }
 
 /* Ajuste das cores dos links no header para contraste com o fundo */
@@ -88,7 +94,8 @@ header .logo,
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Sobreposição escura */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Sobreposição escura */
 }
 
 .intro h2 {
@@ -101,10 +108,14 @@ header .logo,
 }
 
 /* Seções principais */
-.symptoms, .cta, .about, .burnout {
+.symptoms,
+.cta,
+.about,
+.burnout {
   padding: 20px;
   margin: 20px auto;
-  max-width: 60%; /* Garante que as seções ocupem toda a largura disponível */
+  max-width: 60%;
+  /* Garante que as seções ocupem toda a largura disponível */
 }
 
 .symptoms ul {
@@ -137,88 +148,112 @@ footer {
 /* Menu responsivo */
 @media (max-width: 768px) {
   #menu-btn {
-      display: block;
+    display: block;
   }
 
   /* Seções principais */
-  .symptoms, .cta, .about, .burnout {
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 100%; /* Garante que as seções ocupem toda a largura disponível */
-}
+  .symptoms,
+  .cta,
+  .about,
+  .burnout {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 100%;
+    /* Garante que as seções ocupem toda a largura disponível */
+  }
 
   .navbar {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 10px;
-      background-color: #165265;
-      border-radius: 5px;
-      width: 90%; /* Ocupa 90% da largura da tela */
-      max-width: 300px; /* Limita a largura máxima a 300px */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #165265;
+    border-radius: 5px;
+    width: 90%;
+    /* Ocupa 90% da largura da tela */
+    max-width: 300px;
+    /* Limita a largura máxima a 300px */
   }
 
   .navbar a {
-      padding: 15px;
-      text-align: center;
-      font-size: 1.2em; /* Aumenta o tamanho da fonte para legibilidade */
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    /* Aumenta o tamanho da fonte para legibilidade */
   }
 
   .navbar.active {
-      display: flex;
+    display: flex;
   }
 
   .intro {
-      background-attachment: scroll; /* Remove o efeito de paralaxe para melhorar a performance em mobile */
-      padding: 20px 10px; /* Ajuste de padding para melhor espaçamento em telas menores */
+    background-attachment: scroll;
+    /* Remove o efeito de paralaxe para melhorar a performance em mobile */
+    padding: 20px 10px;
+    /* Ajuste de padding para melhor espaçamento em telas menores */
   }
 
   .intro h2 {
-      max-width: 90%; /* Ajusta para o texto ocupar mais espaço em largura */
-      font-size: 1.4em; /* Ajusta o tamanho da fonte */
-      line-height: 1.4; /* Melhora a legibilidade com maior espaçamento entre linhas */
+    max-width: 90%;
+    /* Ajusta para o texto ocupar mais espaço em largura */
+    font-size: 1.4em;
+    /* Ajusta o tamanho da fonte */
+    line-height: 1.4;
+    /* Melhora a legibilidade com maior espaçamento entre linhas */
   }
 
   .symptoms ul {
-      margin-left: 10px; /* Reduz a margem para se alinhar melhor em telas pequenas */
-      font-size: 1em; /* Ajusta o tamanho da fonte para melhor legibilidade */
+    margin-left: 10px;
+    /* Reduz a margem para se alinhar melhor em telas pequenas */
+    font-size: 1em;
+    /* Ajusta o tamanho da fonte para melhor legibilidade */
   }
 
   .symptoms li {
-      margin-bottom: 8px; /* Espaçamento entre itens da lista para uma aparência mais organizada */
+    margin-bottom: 8px;
+    /* Espaçamento entre itens da lista para uma aparência mais organizada */
   }
 
   .cta h2 {
-      font-size: 1.6em; /* Ajusta o tamanho do título */
-      text-align: center;
-      margin-bottom: 10px;
+    font-size: 1.6em;
+    /* Ajusta o tamanho do título */
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   .cta p {
-      font-size: 1em;
-      text-align: center;
-      margin-bottom: 15px;
-      padding: 0 10px; /* Adiciona padding para melhor alinhamento */
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    /* Adiciona padding para melhor alinhamento */
   }
 
   .button {
-      text-align: center;
-      display: block;
-      width: 80%; /* Ajusta a largura do botão para 90% do container */
-      margin: 0 auto; /* Centraliza o botão */
-      padding: 12px 15px; /* Aumenta o padding para facilitar o clique */
-      font-size: 1.2em; /* Tamanho de fonte maior para botões */
+    text-align: center;
+    display: block;
+    width: 80%;
+    /* Ajusta a largura do botão para 90% do container */
+    margin: 0 auto;
+    /* Centraliza o botão */
+    padding: 12px 15px;
+    /* Aumenta o padding para facilitar o clique */
+    font-size: 1.2em;
+    /* Tamanho de fonte maior para botões */
   }
 
   footer {
-      padding: 20px 10px;
-      text-align: center;
-      font-size: 0.8em; /* Ajusta o tamanho da fonte para footer */
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.8em;
+    /* Ajusta o tamanho da fonte para footer */
   }
 
   footer p {
-      margin: 5px 0; /* Reduz a margem para economizar espaço */
-      line-height: 1.3; /* Aumenta o espaçamento entre linhas */
+    margin: 5px 0;
+    /* Reduz a margem para economizar espaço */
+    line-height: 1.3;
+    /* Aumenta o espaçamento entre linhas */
   }
 }
