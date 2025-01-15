@@ -5,10 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prova Online - Avaliação de Saúde Mental</title>
-  <link rel="stylesheet" href="/CSS/styleform.css">
+  <link rel="stylesheet" href="../CSS/StyleForm.css">
 </head>
 
 <body>
+  <div id="lgpdModal" class="modal">
+    <div class="modal-content">
+      <h2>Aviso sobre a LGPD</h2>
+      <p>
+        Este formulário respeita as diretrizes da <b>Lei Geral de Proteção de Dados (LGPD)</b>. Garantimos que todas as
+        informações coletadas serão utilizadas exclusivamente para fins de avaliação e pesquisa relacionados à
+        classificação do nível de burnout, assegurando sua confidencialidade e segurança.
+      </p>
+      <br>
+      <p>
+        Ao prosseguir e enviar suas respostas, você declara estar ciente e de acordo com os termos da LGPD e autoriza o
+        uso das informações fornecidas de acordo com as finalidades descritas.
+      </p>
+      <br>
+      <a href="https://www.gov.br/esporte/pt-br/acesso-a-informacao/lgpd" target="_blank">Link para mais informações
+        sobre LGPD</a>
+      <div class="modal-buttons">
+        <button id="acceptBtn">Aceito</button>
+        <button id="declineBtn">Não Aceito</button>
+      </div>
+    </div>
+  </div>
+
   <div class="form-page">
     <!-- Barra de Progresso -->
     <div class="progress-bar">
@@ -22,15 +45,14 @@
     </header>
 
     <main class="form-container">
-      <form id="quizForm" action="#" method="post" onsubmit="capturarRespostasDoFormulario(); return false;">
-
+      <form id="quizForm" onsubmit="return false">
         <!-- Pergunta 1 -->
         <div class="question active">
           <label for="nome">Qual é o seu nome completo?</label>
-          <input type="text" id="userName" name="userName" required>
+          <input type="text" id="nome" name="nome" required>
 
           <label for="email">Qual é o seu e-mail?</label>
-          <input type="email" id="userEmail" name="userEmail" required>
+          <input type="email" id="email" name="email" required>
 
           <label for="idade">Qual é a sua idade?</label>
           <input type="number" id="idade" name="idade" required>
@@ -51,7 +73,7 @@
           </select>
         </div>
 
-        <!-- Pergunta 2 -->
+        <!-- Pergunta 1 -->
         <div class="question">
           <label>Com que frequência você se sente emocionalmente exausto no trabalho?</label>
           <div class="radio-group">
@@ -63,9 +85,9 @@
           </div>
         </div>
 
-        <!-- Pergunta 3 -->
+        <!-- Pergunta 2 -->
         <div class="question">
-          <label>Com que frequência você sente que não tem energia suficiente para enfrentar o dia de trabalho?</label>
+          <label>Com que frequência você sente que o trabalho está drenando sua energia mental?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao2" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao2" value="Raramente"> Raramente</label>
@@ -75,9 +97,10 @@
           </div>
         </div>
 
-        <!-- Pergunta 4 -->
+        <!-- Pergunta 3 -->
         <div class="question">
-          <label>Com que frequência você sente que o trabalho está drenando sua energia mental?</label>
+          <label>Com que frequência você sente que precisa de um descanso maior do que o habitual para se recuperar do
+            trabalho?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao3" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao3" value="Raramente"> Raramente</label>
@@ -87,10 +110,9 @@
           </div>
         </div>
 
-        <!-- Pergunta 5 -->
+        <!-- Pergunta 4 -->
         <div class="question">
-          <label>Com que frequência você se sente irritado ou frustrado por pequenas coisas no ambiente de
-            trabalho?</label>
+          <label>Com que frequência você se sente fisicamente cansado, mesmo após uma noite de sono?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao4" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao4" value="Raramente"> Raramente</label>
@@ -100,10 +122,11 @@
           </div>
         </div>
 
-        <!-- Pergunta 6 -->
+        <!-- Despersonalização -->
+        <!-- Pergunta 5 -->
         <div class="question">
-          <label>Com que frequência você sente que precisa de um descanso maior do que o habitual para se recuperar do
-            trabalho?</label>
+          <label>Com que frequência você sente que está se distanciando emocionalmente dos colegas de trabalho ou
+            clientes?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao5" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao5" value="Raramente"> Raramente</label>
@@ -113,9 +136,10 @@
           </div>
         </div>
 
-        <!-- Pergunta 7 -->
+        <!-- Pergunta 6 -->
         <div class="question">
-          <label>Com que frequência você se sente fisicamente cansado, mesmo após uma noite de sono?</label>
+          <label>Com que frequência você trata os colegas ou clientes de maneira impessoal, como se fossem tarefas e não
+            pessoas?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao6" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao6" value="Raramente"> Raramente</label>
@@ -125,9 +149,10 @@
           </div>
         </div>
 
-        <!-- Pergunta 8 -->
+        <!-- Pergunta 7 -->
         <div class="question">
-          <label>Com que frequência você sente que seu trabalho é uma fonte de estresse constante?</label>
+          <label>Com que frequência você percebe uma falta de empatia ou paciência para lidar com os problemas de outras
+            pessoas no trabalho?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao7" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao7" value="Raramente"> Raramente</label>
@@ -137,9 +162,10 @@
           </div>
         </div>
 
-        <!-- Pergunta 9 -->
+        <!-- Realização Profissional -->
+        <!-- Pergunta 8 -->
         <div class="question">
-          <label>Com que frequência você tem dificuldade em se concentrar ou tomar decisões devido ao cansaço?</label>
+          <label>Com que frequência você sente orgulho do trabalho que realiza?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao8" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao8" value="Raramente"> Raramente</label>
@@ -149,11 +175,9 @@
           </div>
         </div>
 
-        <!-- Despersonalização -->
-        <!-- Pergunta 10 -->
+        <!-- Pergunta 9 -->
         <div class="question">
-          <label>Com que frequência você sente que está se distanciando emocionalmente dos colegas de trabalho ou
-            clientes?</label>
+          <label>Com que frequência você sente que seu trabalho é significativo e útil para os outros?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao9" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao9" value="Raramente"> Raramente</label>
@@ -163,10 +187,10 @@
           </div>
         </div>
 
-        <!-- Pergunta 11 -->
+        <!-- Pergunta 10 -->
         <div class="question">
-          <label>Com que frequência você trata os colegas ou clientes de maneira impessoal, como se fossem tarefas e não
-            pessoas?</label>
+          <label>Com que frequência você sente que possui habilidades e competências para realizar suas tarefas com
+            sucesso?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao10" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao10" value="Raramente"> Raramente</label>
@@ -176,9 +200,9 @@
           </div>
         </div>
 
-        <!-- Pergunta 12 -->
+        <!-- Pergunta 11 -->
         <div class="question">
-          <label>Com que frequência você evita interagir com pessoas no trabalho, preferindo ficar isolado?</label>
+          <label>Com que frequência você sente que é valorizado pelo trabalho que realiza?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao11" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao11" value="Raramente"> Raramente</label>
@@ -188,10 +212,10 @@
           </div>
         </div>
 
-        <!-- Pergunta 13 -->
+        <!-- Impacto na Vida Pessoal e Social -->
+        <!-- Pergunta 12 -->
         <div class="question">
-          <label>Com que frequência você percebe uma falta de empatia ou paciência para lidar com os problemas de outras
-            pessoas no trabalho?</label>
+          <label>Com que frequência o trabalho interfere em seu sono, apetite ou hábitos de descanso?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao12" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao12" value="Raramente"> Raramente</label>
@@ -201,9 +225,10 @@
           </div>
         </div>
 
-        <!-- Pergunta 14 -->
+        <!-- Pergunta 13 -->
         <div class="question">
-          <label>Com que frequência você se sente indiferente ao que acontece no ambiente de trabalho?</label>
+          <label>Com que frequência você sente que não tem tempo ou energia para se dedicar às pessoas próximas fora do
+            trabalho?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao13" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao13" value="Raramente"> Raramente</label>
@@ -213,22 +238,23 @@
           </div>
         </div>
 
-        <!-- Pergunta 15 -->
+        <!-- Pergunta 14 -->
         <div class="question">
-          <label>Com que frequência você percebe que está respondendo de forma automatizada ou insensível ao lidar com
-            pessoas no trabalho?</label>
+          <label>Com que frequência você sente que o trabalho impede que você aproveite as atividades de lazer?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao14" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao14" value="Raramente"> Raramente</label>
             <label><input type="radio" name="exaustao14" value="Às vezes"> Às vezes</label>
             <label><input type="radio" name="exaustao14" value="Frequentemente"> Frequentemente</label>
             <label><input type="radio" name="exaustao14" value="Sempre"> Sempre</label>
+
           </div>
         </div>
 
-        <!-- Pergunta 16 -->
+        <!-- Pergunta 15 -->
         <div class="question">
-          <label>Com que frequência você sente que seu trabalho está perdendo o sentido ou a importância?</label>
+          <label>Com que frequência você percebe que está sacrificando sua saúde física ou mental devido ao
+            trabalho?</label>
           <div class="radio-group">
             <label><input type="radio" name="exaustao15" value="Nunca" required> Nunca</label>
             <label><input type="radio" name="exaustao15" value="Raramente"> Raramente</label>
@@ -238,209 +264,7 @@
           </div>
         </div>
 
-        <!-- Realização Profissional -->
-        <!-- Pergunta 17 -->
         <div class="question">
-          <label>Com que frequência você sente orgulho do trabalho que realiza?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao16" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao16" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao16" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao16" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao16" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 18 -->
-        <div class="question">
-          <label>Com que frequência você sente que está tendo progresso e sucesso na sua carreira?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao17" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao17" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao17" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao17" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao17" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 19 -->
-        <div class="question">
-          <label>Com que frequência você se sente motivado e engajado no que faz?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao18" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao18" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao18" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao18" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao18" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 20 -->
-        <div class="question">
-          <label>Com que frequência você sente que seu trabalho é significativo e útil para os outros?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao19" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao19" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao19" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao19" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao19" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 21 -->
-        <div class="question">
-          <label>Com que frequência você sente que possui habilidades e competências para realizar suas tarefas com
-            sucesso?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao20" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao20" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao20" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao20" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao20" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 22 -->
-        <div class="question">
-          <label>Com que frequência você sente que seu trabalho contribui para o seu crescimento pessoal e
-            profissional?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao21" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao21" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao21" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao21" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao21" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 23 -->
-        <div class="question">
-          <label>Com que frequência você sente que é capaz de lidar com os desafios no trabalho de forma eficaz?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao22" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao22" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao22" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao22" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao22" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 24 -->
-        <div class="question">
-          <label>Com que frequência você sente que é valorizado pelo trabalho que realiza?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao23" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao23" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao23" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao23" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao23" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Impacto na Vida Pessoal e Social -->
-        <!-- Pergunta 25 -->
-        <div class="question">
-          <label>Com que frequência o trabalho interfere em seu sono, apetite ou hábitos de descanso?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao24" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao24" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao24" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao24" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao24" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 26 -->
-        <div class="question">
-          <label>Com que frequência você sente que não tem tempo ou energia para se dedicar às pessoas próximas fora do
-            trabalho?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao25" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao25" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao25" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao25" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao25" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 27 -->
-        <div class="question">
-          <label>Com que frequência você se sente irritado ou impaciente com amigos e familiares devido ao cansaço do
-            trabalho?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao26" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao26" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao26" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao26" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao26" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 28 -->
-        <div class="question">
-          <label>Com que frequência você sente que o trabalho impede que você aproveite as atividades de lazer?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao27" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao27" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao27" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao27" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao27" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 29 -->
-        <div class="question">
-          <label>Com que frequência você percebe que está sacrificando sua saúde física ou mental devido ao
-            trabalho?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao28" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao28" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao28" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao28" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao28" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 30 -->
-        <div class="question">
-          <label>Com que frequência o trabalho afeta negativamente sua saúde física (como dores, cansaço constante ou
-            insônia)?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao29" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao29" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao29" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao29" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao29" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 31 -->
-        <div class="question">
-          <label>Com que frequência você sente que seu trabalho afeta seu humor e comportamento fora do horário de
-            expediente?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao30" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao30" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao30" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao30" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao30" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <!-- Pergunta 32 -->
-        <div class="question">
-          <label>Com que frequência você sente que precisa "desligar" completamente do trabalho para conseguir se
-            recuperar?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="exaustao31" value="Nunca" required> Nunca</label>
-            <label><input type="radio" name="exaustao31" value="Raramente"> Raramente</label>
-            <label><input type="radio" name="exaustao31" value="Às vezes"> Às vezes</label>
-            <label><input type="radio" name="exaustao31" value="Frequentemente"> Frequentemente</label>
-            <label><input type="radio" name="exaustao31" value="Sempre"> Sempre</label>
-          </div>
-        </div>
-
-        <div class="question final">
           <label for="comentarios">Comentários adicionais</label>
           <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escreva aqui..."></textarea>
         </div>
@@ -452,7 +276,7 @@
         </div>
 
         <!-- Botão de Envio -->
-        <button type="submit" id="submitBtn" style="display: none;" onclick="calculateBurnout()">Enviar
+        <button id="submitBtn" style="display: none;" onclick="calculateBurnout()">Enviar
           Respostas</button>
       </form>
     </main>

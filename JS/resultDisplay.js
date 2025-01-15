@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const resultContainer = document.getElementById("result-container");
 
   // Exibe o pop-up automaticamente ao carregar a página
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   popup.classList.add("show");
 
   // Fecha o pop-up ao clicar no botão
-  closePopupButton.addEventListener("click", function () {
+  closePopupButton.addEventListener("click", function() {
     popup.classList.remove("show");
   });
 
@@ -124,66 +124,4 @@ function getPersonalLifeImpactSolution(level) {
     default:
       return "";
   }
-}
-
-// Função para enviar as respostas para o Google Sheets via Apps Script
-async function enviarRespostasParaGoogleSheets(dados) {
-  const url = 'https://script.google.com/macros/s/AKfycbxS_hbdQr8dJHwPY9eahANsI5ci0ky8Pbc312N331fbJR4cpghoCskRvh8uJRtRovB8Jw/exec'; // Substitua com a URL correta
-
-  try {
-    // Envia a requisição POST para o Google Apps Script
-    const resposta = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(dados)
-    });
-
-    // Verifica se a resposta foi bem-sucedida (status 2xx)
-    if (!resposta.ok) {
-      throw new Error(`Erro ao enviar dados: ${resposta.status} ${resposta.statusText}`);
-    }
-
-    // Converte a resposta para JSON
-    const resultado = await resposta.json();
-
-    // Verifica o status de sucesso na resposta
-    if (resultado.status === "sucesso") {
-      console.log("Dados enviados com sucesso para o Google Sheets.");
-      alert("Dados enviados com sucesso!");
-    } else {
-      console.error("Erro ao enviar dados:", resultado);
-      alert("Erro ao enviar dados. Tente novamente.");
-    }
-  } catch (erro) {
-    console.error("Erro de conexão ou de processamento:", erro);
-    alert("Erro ao tentar enviar os dados. Verifique sua conexão e tente novamente.");
-  }
-}
-
-// Função para capturar as respostas do formulário e enviar para o Google Sheets
-function capturarRespostasDoFormulario() {
-  // Captura os dados do formulário
-  const burnoutResult = {
-    userName: document.getElementById("userName").value,
-    userEmail: document.getElementById("userEmail").value,
-    idade: document.getElementById("idade").value,
-    empresa: document.getElementById("empresa").value,
-    setor: document.getElementById("setor").value,
-    genero: document.getElementById("genero").value,
-    exaustaoEmocional: localStorage.getItem("exaustaoEmocional"),
-    despersonalizacao: localStorage.getItem("despersonalizacao"),
-    realizacaoProfissional: localStorage.getItem("realizacaoProfissional"),
-    impactoVidaPessoal: localStorage.getItem("impactoVidaPessoal")
-  };
-
-  // Verifica se os dados foram capturados corretamente antes de enviar
-  if (Object.values(burnoutResult).includes("") || Object.values(burnoutResult).includes(null)) {
-    alert("Por favor, preencha todos os campos antes de enviar.");
-    return;
-  }
-
-  // Envia os dados para o Google Sheets
-  enviarRespostasParaGoogleSheets(burnoutResult);
 }

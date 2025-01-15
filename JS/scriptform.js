@@ -5,6 +5,29 @@ const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
 const submitBtn = document.getElementById('submitBtn');
 
+// Obtendo os elementos do pop-up e dos botões
+const modal = document.getElementById("lgpdModal");
+const acceptBtn = document.getElementById("acceptBtn");
+const declineBtn = document.getElementById("declineBtn");
+
+function showModal() {
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+function goToHome() {
+    window.location.href = "../home.html";
+}
+
+acceptBtn.addEventListener("click", closeModal);
+declineBtn.addEventListener("click", goToHome);
+
+
+window.onload = showModal;
+
 function showQuestion(n) {
     questions.forEach((question, index) => {
         question.classList.toggle('active', index === n);

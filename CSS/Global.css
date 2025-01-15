@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+
+/* Variáveis de cores - mantendo a consistência com o sistema */
+:root {
+    --primary-color: #6b9080;
+    --secondary-color: #a4c3b2;
+    --background-color: #f6fff8;
+    --text-color: #2d3748;
+    --border-color: #cce3de;
+    --hover-color: #4a7163;
+    --shadow-color: rgba(107, 144, 128, 0.1);
+}
+
+/* Reset e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header e Navegação */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+.navbar .button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navbar .button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+#menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+/* Seções */
+section:not(.intro) {
+    padding: 5rem 10%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+
+/* Seção Intro */
+.intro {
+    padding: 5rem 4%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(rgba(246, 255, 248, 0.4), rgba(246, 255, 248, 0.4)),
+        url('../img/fundo.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: left;
+    padding-top: 120px;
+}
+
+.intro h2 {
+    color: var(--hover-color);
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 3.5rem;
+    max-width: 600px;
+    margin: 0;
+    animation: fadeInUp 1s ease;
+}
+
+/* Seção About */
+.about {
+    background-color: white;
+}
+
+/* Seção Burnout */
+.burnout {
+    background-color: var(--background-color);
+}
+
+/* Seção Symptoms */
+.symptoms {
+    background-color: white;
+    padding: 5rem 10%;
+}
+
+.symptoms ul {
+    list-style: none;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.symptoms li {
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    position: relative;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.symptoms li::before {
+    content: none;
+}
+
+.symptoms b {
+    color: var(--primary-color);
+}
+
+
+/* Seção CTA */
+.cta {
+    text-align: center;
+    background: linear-gradient(rgba(107, 144, 128, 0.1), rgba(107, 144, 128, 0.1));
+    padding: 5rem 2rem;
+}
+
+.cta .button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.cta .button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1325px) {
+    .intro h2 {
+        font-size: 2rem;
+        text-align: left;
+        max-width: 30%;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 95%;
+    }
+
+    section {
+        padding: 3rem 5%;
+    }
+}
+
+@media (max-width: 769px) {
+    #menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background: white;
+        width: 100%;
+        height: calc(100vh - 80px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        transition: 0.3s ease;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .intro {
+        padding: 5rem 4%;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background: linear-gradient(rgba(246, 255, 248, 0.75), rgba(246, 255, 248, 0.75)),
+            url('../img/fundo.webp');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        text-align: left;
+        padding-top: 120px;
+    }
+
+    .intro h2 {
+        font-size: 2rem;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 90%;
+    }
+}
