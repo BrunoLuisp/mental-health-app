@@ -67,19 +67,7 @@ Um sistema web para avaliar e classificar os níveis de burnout com base em dime
 Este projeto segue as diretrizes da **Lei Geral de Proteção de Dados (LGPD)**. Garantimos que:
 - Nenhum dado pessoal será coletado ou compartilhado sem autorização explícita.
 - Informações são utilizadas exclusivamente para a avaliação do burnout.
-
----
-
-## **💡 Contribuições**
-
-Contribuições são bem-vindas! Para contribuir:  
-1. Faça um fork do repositório.  
-2. Crie uma branch para sua feature:  
-   ```bash
-   git checkout -b minha-feature
-   ```
-3. Envie um pull request com suas alterações.
-
+  
 ---
 
 ## **📬 Contato**
