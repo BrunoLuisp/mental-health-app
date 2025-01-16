@@ -20,7 +20,7 @@ Um sistema web para avaliar e classificar os níveis de burnout com base em dime
 - **HTML5**: Estrutura do sistema.  
 - **CSS3**: Estilização e design responsivo.  
 - **JavaScript**: Lógica para cálculo das pontuações e exibição dos resultados.  
-- **Banco de Dados (opcional)**: Integração com uma solução de armazenamento em nuvem para salvar respostas.
+- **Banco de Dados**: Integração com uma solução de armazenamento em nuvem para salvar respostas.
 
 ---
 
