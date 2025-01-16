@@ -1,5 +1,5 @@
 
-# **Classificador de Burnout - Xô Estresse**
+# **Classificador de Burnout**
 
 Um sistema web para avaliar e classificar os níveis de burnout com base em dimensões amplamente reconhecidas: **Exaustão Emocional**, **Despersonalização**, **Realização Profissional** e **Impacto na Vida Pessoal e Social**. Este projeto visa promover o bem-estar e conscientização sobre a saúde mental, alinhado à LGPD para proteger os dados dos usuários.
 
