@@ -260,7 +260,7 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
     .result-page {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     header h1 {
@@ -268,11 +268,11 @@ footer {
     }
 
     .result-section {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
 
     .result-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .popup-content {

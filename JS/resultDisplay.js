@@ -1,16 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const resultContainer = document.getElementById("result-container");
 
-  // Exibe o pop-up automaticamente ao carregar a página
+  // Obtendo os elementos do pop-up e do botão de fechar
   const popup = document.getElementById("popup");
-  const closePopupButton = document.getElementById("closePopup");
+  const closePopupBtn = document.getElementById("closePopup");
 
-  popup.classList.add("show");
+  // Função para mostrar o pop-up
+  function showPopup() {
+    popup.style.display = "block";
+  }
 
-  // Fecha o pop-up ao clicar no botão
-  closePopupButton.addEventListener("click", function() {
-    popup.classList.remove("show");
-  });
+  // Função para fechar o pop-up
+  function closePopup() {
+    popup.style.display = "none";
+  }
+
+  // Adicionando o evento de fechar o pop-up
+  closePopupBtn.addEventListener("click", closePopup); // Fechar o pop-up
+
+  // Exibindo o pop-up quando a página for carregada
+  window.onload = showPopup;
 
   // Recupera o resultado armazenado no localStorage
   const burnoutResult = JSON.parse(localStorage.getItem("burnoutResult"));
@@ -64,14 +73,14 @@ document.addEventListener("DOMContentLoaded", function() {
 function getEmotionalExhaustionSolution(level) {
   switch (level) {
     case "Baixo":
-      return `Objetivo: Proteger seu bem-estar para que o estresse atual não evolua para algo mais intenso.
+      return `Proteger seu bem-estar para que o estresse atual não evolua para algo mais intenso.
       <br><br> Cuide de Seu Corpo e Sua Mente: Procure manter uma rotina de sono saudável, alimentar-se bem e incluir movimento físico no seu dia a dia.
       Separe alguns minutos para algo relaxante, como ouvir uma música que gosta, meditar ou simplesmente respirar fundo.`;
     case "Moderado":
-      return `Objetivo: Reduzir a sobrecarga e encontrar equilíbrio. <br><br> Veja se consegue ajustar sua carga de trabalho e planeje intervalos curtos para descansar.
+      return `Reduzir a sobrecarga e encontrar equilíbrio. <br><br> Veja se consegue ajustar sua carga de trabalho e planeje intervalos curtos para descansar.
       <br><br> Pratique o Autocuidado Regularmente e considere explorar práticas de mindfulness ou atividades relaxantes que aliviem o cansaço mental.`;
     case "Alto":
-      return `Objetivo: Interromper o ciclo de exaustão e restaurar o bem-estar. <br><br> Procure ajuda profissional, como terapia, para lidar com a origem desse esgotamento.
+      return `Interromper o ciclo de exaustão e restaurar o bem-estar. <br><br> Procure ajuda profissional, como terapia, para lidar com a origem desse esgotamento.
       <br><br> Se possível, converse sobre um afastamento temporário para aliviar a carga e restaurar a energia.`;
     default:
       return "";

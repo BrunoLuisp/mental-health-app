@@ -92,7 +92,7 @@ header {
 }
 
 /* Seções */
-section:not(.intro) {
+section:not(.intro, .contato) {
     padding: 5rem 10%;
     min-height: 50vh;
     display: flex;
@@ -211,6 +211,72 @@ section p {
     box-shadow: 0 4px 12px var(--shadow-color);
 }
 
+.contato {
+    padding: 5rem 10%;
+    min-height: 50vh;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.cartoes-contato {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.profissional {
+    background-color: var(--primary-color);
+    /* Fundo verde */
+    border-radius: 15px;
+    /* Bordas arredondadas */
+    padding: 1.5rem;
+    width: 350px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profissional img.foto-contato {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* Tornar as fotos redondas */
+    margin-bottom: 15px;
+}
+
+.profissional h3 {
+    font-size: 2.3rem;
+    margin: 2px 0;
+}
+
+.profissional h4 {
+    height: 4.5rem;
+    font-size: 1.5rem;
+    margin: 2px 0;
+    font-weight: normal;
+}
+
+.profissional .icons img {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    justify-content: flex-end;
+}
+
+.profissional .icons img:hover {
+    transform: scale(1.1);
+    /* Efeito de zoom ao passar o mouse */
+}
+
+.icons a {
+    text-decoration: none;
+}
+
+
 /* Footer */
 footer {
     background-color: white;
@@ -298,6 +364,15 @@ footer {
 
     section h2 {
         font-size: 2rem;
+    }
+
+    .cartoes-contato {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
     }
 }
 

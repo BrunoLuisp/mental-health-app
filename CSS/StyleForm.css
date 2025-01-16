@@ -271,7 +271,7 @@ textarea {
 /* Responsividade */
 @media (max-width: 768px) {
     .form-page {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .header h1 {
