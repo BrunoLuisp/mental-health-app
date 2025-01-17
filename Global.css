@@ -46,6 +46,7 @@ header {
     height: 50px;
     width: auto;
     transition: transform 0.3s ease;
+    border-radius: 50%;
 }
 
 .logo img:hover {
